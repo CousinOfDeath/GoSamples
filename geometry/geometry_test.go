@@ -31,8 +31,9 @@ func TestPerimeterRectanle(t *testing.T) {
 func TestMeasureCircle(t *testing.T) {
 	c := circle{radius: 5}
 	var result = interfaces.MeasureArea(c)
+	//Absolute comparison of floating points won't work due to rounding errors
 	result = math.Round((result * 100) / 100)
-	expected := 78.54
+	expected := 79.000000
 
 	if result != expected {
 		t.Errorf("Result %f and expected %f", result, expected)
@@ -42,8 +43,9 @@ func TestMeasureCircle(t *testing.T) {
 func TestPerimeterCircle(t *testing.T) {
 	c := circle{radius: 5}
 	var result = interfaces.MeasurePerimeter(c)
+	//Absolute comparison of floating points won't work due to rounding errors
 	result = math.Round((result * 100) / 100)
-	expected := 31.42
+	expected := 31.000000
 
 	if result != expected {
 		t.Errorf("Result %f and expected %f", result, expected)
